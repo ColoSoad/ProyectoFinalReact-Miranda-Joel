@@ -1,0 +1,19 @@
+.cardItem {
+    height: 300px;
+    width: 250px;
+}
+
+.cards {
+    display: flex;
+    padding: 20px;
+}
+
+.boton {
+    color: #2b2f32 !important;
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) {
+    .cards {
+        display: contents;
+    }
+}

@@ -1,0 +1,15 @@
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+.cart {
+    height: 30px;
+    transition: all 0.3s;
+    padding: 0 5px 0 0;
+}
+
+.numeroHardcodeado {
+    color: rgb(249, 91, 0);
+}

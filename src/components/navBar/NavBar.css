@@ -1,0 +1,58 @@
+.bg-dark {
+    background-color: #2b2f32 !important;
+}
+.logo {
+    height: 70px;
+    width: 70px;
+    border-radius: 50px;
+    padding: 1.5em;
+    background-image: url(../../assets/img/Klothes.jpg);
+    background-position: left;
+    background-size: cover;
+    transition: all 0.3s;
+    color: rgb(249, 91, 0);
+    display: inline-block;
+    padding: 0 20px;
+    transition: all 0.3s;
+}
+
+.brand {
+    text-shadow: 1px 1px 1px #2b2f32;
+}
+
+.logo:hover {
+    transform: scale(1.2);
+}
+.navbar {
+    cursor: pointer;
+    color: rgb(249, 91, 0);
+}
+
+.nav-link,
+.dropdown-item {
+    color: rgb(249, 91, 0) !important;
+}
+
+.dropdown-item {
+    color: #2b2f32 !important;
+}
+
+.dropdown-menu {
+    background-color: rgb(249, 91, 0);
+}
+
+.collapse {
+    padding-left: 430px;
+}
+button,
+.collapsed {
+    color: rgb(249, 91, 0) !important;
+    background-color: rgb(249, 91, 0) !important;
+    border-color: #2b2f32;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 991px) {
+    .collapse {
+        padding-left: 0px;
+    }
+}

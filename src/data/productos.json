@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "category": "Pantalones",
+        "producto": "Jeans clásico",
+        "precio": "24560",
+        "detalle": "Jeans estilo clásico de doble costura, muy resistente y excelente cálidad",
+        "img": "../src/assets/img/clasico.jpg"
+    },
+    {
+        "id": 2,
+        "category": "Pantalones",
+        "producto": "Jeans oversize",
+        "precio": "46980",
+        "detalle": "Jeans estilo oversize de simple costura, excelente cálidad de origen europeo",
+        "img": "../src/assets/img/oversize.jpg"
+    },
+    {
+        "id": 3,
+        "category": "Remeras",
+        "producto": "Remera clásica lisa",
+        "precio": "12856",
+        "detalle": "Remera clasica 100% algodón, excelente cálidad de origen europeo",
+        "img": "../src/assets/img/clasica.jpg"
+    },
+    {
+        "id": 4,
+        "category": "Remeras",
+        "producto": "Remera oversize",
+        "precio": "25980",
+        "detalle": "Remera oversize de algodón, buena cálidad con doble costura de origen china",
+        "img": "../src/assets/img/oversize-remera.jpg"
+    },
+    {
+        "id": 5,
+        "category": "Remeras",
+        "producto": "Chomba",
+        "precio": "2.48",
+        "detalle": "Chomba con cuello mao, de excelente calidad con doble costura, origen europeo",
+        "img": "../src/assets/img/chomba.jpg"
+    },
+    {
+        "id": 6,
+        "category": "Pantalones",
+        "producto": "Jeans elástizado",
+        "precio": "36540",
+        "detalle": "Jeans chupin de doble costura, resistente, excelente cálidad de origen chino",
+        "img": "../src/assets/img/chupin.jpg"
+    }
+]

@@ -1,0 +1,28 @@
+.row {
+    justify-content: center;
+}
+
+.cel {
+    font-size: 25px;
+    color: rgb(249, 91, 0);
+}
+
+.pc,
+.derecha {
+    padding-top: 25px;
+    font-size: 25px;
+    color: rgb(249, 91, 0);
+}
+
+.labels {
+    padding-right: 15px;
+    font-size: 15px;
+    color: rgb(249, 91, 0);
+}
+.check {
+    zoom: 1.3;
+}
+
+.btns {
+    padding-top: 20px;
+}
