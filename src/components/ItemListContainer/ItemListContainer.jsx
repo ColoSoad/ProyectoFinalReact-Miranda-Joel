@@ -22,6 +22,9 @@ export const ItemListContainer = () => {
     }, [id]);
     return (
         <div className="contenedor">
+            <h1 className="titulo">
+                Tienda <hr /> {id}
+            </h1>
             <ItemList items={items} />
         </div>
     );

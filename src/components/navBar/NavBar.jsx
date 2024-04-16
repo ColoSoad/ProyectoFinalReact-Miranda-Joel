@@ -26,12 +26,8 @@ export const NavBar = () => (
                             <NavDropdown.Item to="category/Pantalones" as={NavLink}>
                                 Pants
                             </NavDropdown.Item>
-                            <NavDropdown.Item to="category/zapatillas" as={NavLink}>
+                            <NavDropdown.Item to="category/Zapatillas" as={NavLink}>
                                 Sneakers
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item to="category/lentes" as={NavLink}>
-                                Glasses
                             </NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link to="contacto" as={NavLink}>

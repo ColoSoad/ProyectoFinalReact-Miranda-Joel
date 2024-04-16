@@ -1,19 +1,31 @@
-.cardItem {
-    height: 300px;
-    width: 250px;
+.cards {
+    height: 400px;
+    width: 264px;
+    border-radius: 5%;
+    border: 2px solid #2b2f32;
+    border-color: rgb(73, 70, 70);
+    box-shadow: 26px 28px 15px -4px rgba(0, 0, 0, 0.5);
 }
 
-.cards {
-    display: flex;
-    padding: 20px;
+.imgCard {
+    margin: auto;
+    height: 150px;
+    width: 260px;
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+.cardBody {
+    border-radius: 0;
 }
 
 .boton {
     color: #2b2f32 !important;
 }
 
-@media only screen and (min-width: 720px) and (max-width: 1024px) {
-    .cards {
-        display: contents;
-    }
+.boton:hover {
+    color: #fff !important;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 800px) {
 }

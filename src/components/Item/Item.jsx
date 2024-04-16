@@ -7,14 +7,13 @@ import { Link } from 'react-router-dom';
 export const Item = ({ item }) => {
     return (
         <>
-            <section className="cards">
-                <div>
-                    <Card className="itemCard" style={{ width: '120px' }}>
-                        <Card.Img variant="top" src={item.img} alt={item.producto} />
-                        <Card.Body>
+            <section className="PadreSectionCards">
+                <div className="divCards">
+                    <Card className="cards">
+                        <Card.Img className="imgCard" variant="top" src={item.img} alt={item.producto} />
+                        <Card.Body className="cardBody">
                             <Card.Title>{item.producto}</Card.Title>
                             <Card.Text>{item.detalle}</Card.Text>
-                            <hr />
                             <Card.Text>{item.category}</Card.Text>
                             <Link to={`/item/${item.id}`}>
                                 <Button variant="primary" className="boton">
