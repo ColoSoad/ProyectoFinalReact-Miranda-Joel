@@ -1,0 +1,134 @@
+.titul {
+    backdrop-filter: blur(0px);
+    padding: 25px 0 35px 0;
+    text-shadow: 4px 4px 1px #2b2f32;
+    font-weight: 650;
+    color: rgb(249, 91, 0);
+    text-align: center;
+    font-size: 36px;
+    font-size: 55px;
+    font-weight: 800;
+    background: linear-gradient(to bottom, #fe1e00, #fa9200, #fad400);
+    color: transparent;
+    background-clip: text;
+}
+
+.detail {
+    background-image: url(../../assets/img/tienda.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 25px;
+}
+
+.imgYdetalle {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, 400px);
+    row-gap: 25px;
+    column-gap: 25px;
+    place-items: center;
+}
+
+.parrafo {
+    color: rgb(249, 91, 0);
+    text-shadow: 2px 1px 1px black;
+}
+
+.imgleft {
+    width: 350px;
+    height: 420px;
+    border-radius: 5%;
+    box-shadow: 26px 28px 15px -4px rgba(0, 0, 0, 0.5);
+}
+
+.precio {
+    color: aliceblue;
+    padding: 25px 0 0 0;
+    text-shadow: 2px 1px 1px black;
+}
+
+.right {
+    width: 335px;
+    font-size: 36px;
+    backdrop-filter: blur(10px);
+    margin: 0;
+    padding: 15px;
+    margin-top: 25px;
+    border: rgb(249, 91, 0) solid 2px;
+    box-shadow: 26px 28px 15px -4px rgba(0, 0, 0, 0.5);
+    border-radius: 5%;
+}
+
+.divbtn {
+    margin-top: 25px;
+    padding: 15px;
+}
+
+.botonn {
+    color: aliceblue !important;
+    box-shadow: 0px 6px 0px rgb(73, 27, 1);
+    transition: all ease 100ms;
+}
+
+.botonn:hover {
+    color: #2b2f32 !important;
+}
+
+.bot:active {
+    transform: translateY(6px);
+    box-shadow: 0px 0px 0px rgb(73, 27, 1);
+}
+
+.botonn:focus {
+    color: #2b2f32 !important;
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+    .imgYdetalle {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(auto-fill, 420px);
+    }
+    .left {
+        margin-left: 0%;
+    }
+
+    .right {
+        height: 420px;
+        margin-right: 0%;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 2024px) {
+    .imgYdetalle {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(auto-fill, 420px);
+    }
+
+    .divbtn {
+        margin-top: 25px;
+        padding: 35px;
+    }
+
+    .left {
+        margin-top: 45px;
+        margin-left: 35%;
+        border: rgb(249, 91, 0) solid 2px;
+        border-radius: 5%;
+    }
+
+    .right {
+        height: 420px;
+        margin-right: 35%;
+        margin-top: 45px;
+        border: rgb(249, 91, 0) solid 2px;
+        box-shadow: 26px 28px 15px -4px rgba(0, 0, 0, 0.5);
+        border-radius: 5%;
+    }
+
+    .precio {
+        text-align: center;
+    }
+}

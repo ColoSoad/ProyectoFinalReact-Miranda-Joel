@@ -1,14 +1,4 @@
 .contenedor {
     background: linear-gradient(#2b2f32, #2a3a47, #000, #000, #2a3a47, #2b2f32);
-}
-
-.titulo {
-    font-size: 55px;
-    font-weight: 800;
-    background: linear-gradient(#fe1e00, #fa9200, #fad400);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: transparent;
-    background-clip: text;
+    margin: 0%;
 }

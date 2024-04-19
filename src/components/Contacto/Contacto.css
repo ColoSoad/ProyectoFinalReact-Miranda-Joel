@@ -1,3 +1,11 @@
+.contenedor {
+    background-image: url(../../assets/img/tienda.jpg);
+}
+
+.contacto {
+    padding: 78px 25px 0 25px;
+}
+
 .row {
     justify-content: center;
 }
@@ -12,17 +20,39 @@
     padding-top: 25px;
     font-size: 25px;
     color: rgb(249, 91, 0);
+    text-shadow: 2px 1px 1px black;
 }
 
 .labels {
+    background-color: black;
     padding-right: 15px;
+    padding-left: 10px;
     font-size: 15px;
     color: rgb(249, 91, 0);
+    text-shadow: 2px 1px 1px black;
 }
 .check {
     zoom: 1.3;
+    translate: 5.5px 2.5px;
 }
 
 .btns {
     padding-top: 20px;
+}
+
+.titulo-contacto {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    backdrop-filter: blur(10px);
+    margin: 0;
+    text-shadow: 2px 1px 1px black;
+}
+form {
+    backdrop-filter: blur(10px);
+}
+
+.derecha {
+    backdrop-filter: blur(10px);
+    margin-bottom: 25px;
 }

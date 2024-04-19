@@ -1,0 +1,15 @@
+.div-titulo {
+    background-color: #2b2f32;
+}
+
+.titulo {
+    backdrop-filter: blur(10px);
+    text-align: center;
+    font-size: 55px;
+    font-weight: 800;
+    background: linear-gradient(to bottom, #fe1e00, #fa9200, #fad400);
+    color: transparent;
+    background-clip: text;
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+}
