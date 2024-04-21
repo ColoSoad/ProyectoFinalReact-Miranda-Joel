@@ -1,17 +1,17 @@
 import '../ItemDetail/ItemDetail.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-export const ItemDetail = ({ item }) => {
+export const ItemDetail = ({ items }) => {
     return (
         <div className="detail">
-            <h1 className="titul">{item.producto}</h1>
+            <h1 className="titul">{items.title}</h1>
             <div className="imgYdetalle">
                 <div className="left">
-                    <img src={item.img} alt={item.producto} className="col-md-6 imgleft" />
+                    <img src={items.image} alt={items.title} className="col-md-6 imgleft" />
                 </div>
                 <div className="right ">
-                    <p className="precio">$ PRECIO</p>
-                    <p className="parrafo">{item.detalle}</p>
+                    <p className="precio">$ {items.price}</p>
+                    <p className="parrafo">{items.description}</p>
                 </div>
             </div>
             <div className="d-grid gap-2 col-6 mx-auto divbtn">

@@ -10,11 +10,11 @@ export const Item = ({ item }) => {
             <section className="PadreSectionCards">
                 <div className="divCards">
                     <Card className="cards">
-                        <Card.Img className="imgCard" variant="top" src={item.img} alt={item.producto} />
+                        <Card.Img className="imgCard" variant="top" src={item.image} alt={item.title} />
                         <Card.Body className="cardBody">
-                            <Card.Title>{item.producto}</Card.Title>
-                            <Card.Text>{item.detalle}</Card.Text>
-                            <Card.Text>{item.category}</Card.Text>
+                            <Card.Title>{item.title}</Card.Title>
+                            <Card.Text>{item.description}</Card.Text>
+                            <Card.Text>{item.categoryId}</Card.Text>
                             <Link to={`/item/${item.id}`}>
                                 <Button variant="primary" className="boton">
                                     Ver +
