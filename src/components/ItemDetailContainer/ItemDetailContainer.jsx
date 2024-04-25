@@ -7,8 +7,8 @@ export const ItemDetailContainer = () => {
     const [items, setItems] = useState(null);
     const { id } = useParams();
     useEffect(() => {
-        const dataBase = getFirestore();
-        const refDoc = doc(dataBase, 'items', id);
+        const db = getFirestore();
+        const refDoc = doc(db, 'items', id);
         getDoc(refDoc).then((results) => {
             setItems({ id: results.id, ...results.data() });
         });

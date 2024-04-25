@@ -12,6 +12,7 @@ export const ItemDetail = ({ items }) => {
                 <div className="right ">
                     <p className="precio">$ {items.price}</p>
                     <p className="parrafo">{items.description}</p>
+                    <p className="stock">Stock = {items.stock}</p>
                 </div>
             </div>
             <div className="d-grid gap-2 col-6 mx-auto divbtn">

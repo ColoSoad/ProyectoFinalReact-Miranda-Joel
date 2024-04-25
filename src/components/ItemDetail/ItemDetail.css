@@ -5,7 +5,6 @@
     font-weight: 650;
     color: rgb(249, 91, 0);
     text-align: center;
-    font-size: 36px;
     font-size: 55px;
     font-weight: 800;
     background: linear-gradient(to bottom, #fe1e00, #fa9200, #fad400);
@@ -33,6 +32,13 @@
 .parrafo {
     color: rgb(249, 91, 0);
     text-shadow: 2px 1px 1px black;
+}
+
+.stock {
+    color: rgb(245, 243, 242);
+    text-shadow: 2px 1px 1px black;
+    font-size: 25px;
+    font-weight: 400;
 }
 
 .imgleft {
