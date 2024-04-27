@@ -5,11 +5,13 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
     const [items, setItems] = useState([]);
 
+    // FN PARA LIMPIAR EL CARRITO
     const clear = () => {
         setItems([]);
         location.href = '/';
     };
 
+    //FN PARA AGREGAR ITEMS AL CARRITO
     const addItem = (item, quantity) => {
         const exists = items.some((i) => i.id === item.id);
 
@@ -32,6 +34,7 @@ export const CartProvider = ({ children }) => {
         }
     };
 
+    //FN PARA REMOVER UN PRODUCTO DENTRO DEL CARRITO
     const removeItem = (id) => {
         const filterItems = items.filter((item) => item.id !== id);
         setItems(filterItems);
