@@ -1,0 +1,33 @@
+@media only screen and (min-width: 340px) and (max-width: 2400px) {
+    .Input {
+        transform: translateY(3px);
+        height: 38px;
+        margin-right: 5px;
+        width: 36px;
+        border-radius: 5px;
+        border-color: rgb(249, 91, 0);
+        padding-left: 11px;
+    }
+
+    .Input:active {
+        border-color: rgb(249, 91, 0);
+    }
+
+    .btn-decreciente {
+        height: 38px;
+        text-align: center;
+        margin-right: 5px;
+    }
+
+    .btn-creciente {
+        text-align: center;
+        width: 32px;
+        height: 38px;
+        margin-right: 25px;
+    }
+
+    .divbtn {
+        padding-left: 25px;
+        width: 400px;
+    }
+}

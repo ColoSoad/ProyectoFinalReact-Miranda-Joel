@@ -2,3 +2,13 @@
     background: linear-gradient(#2b2f32, #2a3a47, #000, #000, #2a3a47, #2b2f32);
     margin: 0%;
 }
+
+.div-spinner {
+    height: 600px;
+    display: grid;
+    place-items: center;
+}
+
+.spinner {
+    color: rgb(249, 91, 0);
+}

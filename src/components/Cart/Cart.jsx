@@ -13,7 +13,7 @@ const valoresIniciales = {
 };
 export const Cart = () => {
     const [buyer, setBuyer] = useState(valoresIniciales);
-    const { items, clear } = useContext(CartContext);
+    const { items, clear, removeItem } = useContext(CartContext);
 
     const redirigirPagina = () => {
         location.href = '/';
@@ -86,6 +86,7 @@ export const Cart = () => {
                         <th>CANTIDAD</th>
                         <th>VALOR</th>
                         <th>TOTAL</th>
+                        <th>ELIMINAR</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -97,6 +98,9 @@ export const Cart = () => {
                                 <td>{item.quantity}</td>
                                 <td>$ {item.price}</td>
                                 <td>$ {totalUnidad}</td>
+                                <td>
+                                    <i className="bi bi-trash-fill btnEliminar " onClick={() => removeItem(item.id)}></i>
+                                </td>
                             </tr>
                         );
                     })}

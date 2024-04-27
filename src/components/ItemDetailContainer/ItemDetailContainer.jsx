@@ -15,5 +15,6 @@ export const ItemDetailContainer = () => {
     }, [id]);
 
     if (!items) return null;
+
     return <ItemDetail items={items} />;
 };

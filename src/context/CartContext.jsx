@@ -3,15 +3,42 @@ import { createContext, useState } from 'react';
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-    const [items, setItems] = useState([
-        { id: '1', title: 'Jeans clásico', quantity: 5, price: 24560 },
-        { id: '2', title: 'Jeans oversize', quantity: 15, price: 46980 },
-        { id: '3', title: 'Remeras', quantity: 7, price: 12856 },
-    ]);
+    const [items, setItems] = useState([]);
 
-    const clear = () => setItems([]);
+    const clear = () => {
+        setItems([]);
+        location.href = '/';
+    };
 
-    const addItems = (item) => setItems((prev) => [...prev, item]);
+    const addItem = (item, quantity) => {
+        const exists = items.some((i) => i.id === item.id);
 
-    return <CartContext.Provider value={{ addItems, clear, items }}>{children}</CartContext.Provider>;
+        if (exists) {
+            const updateItems = items.map((i) => {
+                if (i.id === item.id) {
+                    return {
+                        ...i,
+                        quantity: i.quantity + quantity,
+                    };
+                } else {
+                    return i;
+                }
+            });
+            setItems(updateItems);
+        } else {
+            setItems((prev) => {
+                return [...prev, { ...item, quantity }];
+            });
+        }
+    };
+
+    const removeItem = (id) => {
+        const filterItems = items.filter((item) => item.id !== id);
+        setItems(filterItems);
+        if (filterItems.length <= 0) {
+            location.href = '/';
+        }
+    };
+
+    return <CartContext.Provider value={{ addItem, clear, items, removeItem }}>{children}</CartContext.Provider>;
 };

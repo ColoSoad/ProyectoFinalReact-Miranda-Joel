@@ -90,6 +90,30 @@
     color: #2b2f32 !important;
 }
 
+@media only screen and (min-width: 340px) and (max-width: 800px) {
+    .imgYdetalle {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fill, 290px);
+    }
+
+    .detail {
+        padding: 0px;
+    }
+
+    .titul {
+        padding-bottom: 125px;
+    }
+
+    .left {
+        margin-bottom: 65px;
+    }
+
+    .right {
+        margin-right: 5px;
+    }
+}
+
 @media only screen and (min-width: 800px) and (max-width: 1200px) {
     .imgYdetalle {
         display: grid;
