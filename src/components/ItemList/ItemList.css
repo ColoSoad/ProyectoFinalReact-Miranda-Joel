@@ -5,7 +5,7 @@
     row-gap: 25px;
     column-gap: 25px;
     place-items: center;
-    background-image: url(../../assets/img/tienda.jpg);
+    background-image: url(/img/tienda.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

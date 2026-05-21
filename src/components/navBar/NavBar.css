@@ -6,7 +6,7 @@
     width: 70px;
     border-radius: 50px;
     padding: 1.5em;
-    background-image: url(../../assets/img/Klothes.jpg);
+    background-image: url(/img/Klothes.jpg);
     background-position: left;
     background-size: cover;
     transition: all 0.3s;

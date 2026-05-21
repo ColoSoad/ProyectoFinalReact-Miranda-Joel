@@ -1,0 +1,6 @@
+services:
+  app:
+    build: .
+    container_name: mi-app-clothes
+    ports:
+      - "8080:80"

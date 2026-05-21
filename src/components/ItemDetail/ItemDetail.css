@@ -13,7 +13,7 @@
 }
 
 .detail {
-    background-image: url(../../assets/img/tienda.jpg);
+    background-image: url(/img/tienda.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
