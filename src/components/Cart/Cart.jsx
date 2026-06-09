@@ -3,7 +3,7 @@ import 'react-bootstrap/Container';
 import '../Cart/Cart.css';
 import { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
-import { getFirestore, addDoc, collection } from 'firebase/firestore';
+import { getFirestore, addDoc, collection, doc, updateDoc, increment } from 'firebase/firestore';
 import Swal from 'sweetalert2';
 
 const valoresIniciales = {
@@ -41,7 +41,7 @@ export const Cart = () => {
         const db = getFirestore();
         const orderCollection = collection(db, 'orders');
 
-        addDoc(orderCollection, order).then(({ id }) => {
+        addDoc(orderCollection, order).then( async ({ id }) => {
             const mostrarAlerta = () => {
                 Swal.fire({
                     title: 'FELICITACIONES!',
@@ -62,17 +62,27 @@ export const Cart = () => {
                     title: '¡ERROR!',
                 });
             };
-
             // EN ESTE CONDICIONAL UTILIZO EL METODO Object.values() y .some(), EL PRIMER METODO DEVUELVE UN ARRAY DEL OBJETO Y .some() ITERA EL ARRAY, SI ALGUN ELEMENTO CONTIENE UNA CADENA VACIO, RETORNA "true". LO UTILIZO PARA PODER VALIDAR QUE SE HAYAN INGRESADO DATOS EN EL FORMULARIO.
-
             if (id && items.length > 0 && !Object.values(buyer).some((x) => x === '')) {
+                for (const item of items) {
+                    const productoRef = doc(db, 'items', item.id);
+
+                    await updateDoc(productoRef, {
+                        stock: increment(-item.quantity),
+                    });
+}
                 mostrarAlerta();
+                clear()
                 setTimeout(() => {
                     redirigirPagina();
                 }, 3000);
             } else {
                 mostrarAlerta2();
             }
+
+            
+
+            
         });
     };
 

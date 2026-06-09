@@ -5,12 +5,12 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import '../navBar/NavBar.css';
 import '../cartWidget/CartWidget.css';
 import { CartWidget } from '../cartWidget/CartWidget';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 export const NavBar = () => (
     <>
         <Navbar expand="lg" className="bg-dark">
             <Container>
-                <Navbar.Brand href="/">
+                <Navbar.Brand as={Link} to="/">
                     <div className="logo">
                         <span className="brand">KLOT</span>
                         <span>HES</span>

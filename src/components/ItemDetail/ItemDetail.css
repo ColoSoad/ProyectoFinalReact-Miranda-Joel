@@ -90,6 +90,12 @@
     color: #2b2f32 !important;
 }
 
+.no-disponible {
+    color: #fe1e00;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
 @media only screen and (min-width: 340px) and (max-width: 800px) {
     .imgYdetalle {
         display: grid;

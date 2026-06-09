@@ -1,14 +1,25 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState(() =>{
+        const savedCart = localStorage.getItem('cart');
+        return savedCart ? JSON.parse(savedCart) : [];
+    });
+    
+
+
+    //FN PARA CONSERVAR ITEMS EN CARRITO Y NO SE VACIE CUANDO SE REFRESQUE LA APP
+
+    useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(items));
+}, [items]);
 
     // FN PARA LIMPIAR EL CARRITO
     const clear = () => {
         setItems([]);
-        location.href = '/';
+        // location.href = '/';
     };
 
     //FN PARA AGREGAR ITEMS AL CARRITO
@@ -39,7 +50,7 @@ export const CartProvider = ({ children }) => {
         const filterItems = items.filter((item) => item.id !== id);
         setItems(filterItems);
         if (filterItems.length <= 0) {
-            location.href = '/';
+            // location.href = '/';
         }
     };
 

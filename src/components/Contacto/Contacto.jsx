@@ -1,5 +1,9 @@
 import '../Contacto/Contacto.css';
 export const Contacto = () => {
+    const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Formulario enviado");
+};
     return (
         <section className="container-fluid contenedor">
             <div className="contacto">
@@ -7,7 +11,7 @@ export const Contacto = () => {
                     <div className="col-md-6">
                         <div className="mb-3 ">
                             <h1 className="titulo-contacto">Consultas</h1>
-                            <form action="">
+                            <form onSubmit={handleSubmit}>
                                 <label className="box"></label>
                                 <input type="text" className="form-control" name="Nombre" required placeholder="Nombre" />
                                 <label className="box"></label>
