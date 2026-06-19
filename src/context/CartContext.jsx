@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 
+
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
@@ -53,6 +54,8 @@ export const CartProvider = ({ children }) => {
             // location.href = '/';
         }
     };
+
+   
 
     return <CartContext.Provider value={{ addItem, clear, items, removeItem }}>{children}</CartContext.Provider>;
 };

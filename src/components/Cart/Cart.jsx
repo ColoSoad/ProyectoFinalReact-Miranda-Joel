@@ -4,20 +4,22 @@ import '../Cart/Cart.css';
 import { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { getFirestore, addDoc, collection, doc, updateDoc, increment } from 'firebase/firestore';
-import Swal from 'sweetalert2';
+import { mostrarAlerta, mostrarAlerta2, mostrarAlerta3 , redirigirPagina } from '../../utils/alerts';
+
+
 
 const valoresIniciales = {
     name: '',
     phone: '',
     email: '',
 };
+
+
 export const Cart = () => {
     const [buyer, setBuyer] = useState(valoresIniciales);
     const { items, clear, removeItem } = useContext(CartContext);
 
-    const redirigirPagina = () => {
-        location.href = '/';
-    };
+    
 
     const handleChange = (evento) => {
         const { name, value } = evento.target;
@@ -31,6 +33,9 @@ export const Cart = () => {
     };
 
     const total = items.reduce((acu, act) => acu + act.price * act.quantity, 0);
+
+    
+    
     const handleOrder = () => {
         const order = {
             buyer,
@@ -38,52 +43,37 @@ export const Cart = () => {
             total,
         };
 
-        const db = getFirestore();
-        const orderCollection = collection(db, 'orders');
-
-        addDoc(orderCollection, order).then( async ({ id }) => {
-            const mostrarAlerta = () => {
-                Swal.fire({
-                    title: 'FELICITACIONES!',
-                    text: `Su orden ${id} ha sido completada!`,
-                    timer: '3000',
-                    color: '#fa9200',
-                    confirmButtonColor: '#3085d6',
-                });
-            };
-
-            const mostrarAlerta2 = () => {
-                Swal.fire({
-                    text: 'Por Favor! Ingrese datos válidos',
-                    icon: 'error',
-                    timer: '3000',
-                    color: 'red',
-                    confirmButtonColor: '#3085d6',
-                    title: '¡ERROR!',
-                });
-            };
+        if (!Object.values(buyer).some((x) => x === '')) {
+            const db = getFirestore();
+            const orderCollection = collection(db, 'orders');
+            addDoc(orderCollection, order).then( async ({ id }) => {
+            
             // EN ESTE CONDICIONAL UTILIZO EL METODO Object.values() y .some(), EL PRIMER METODO DEVUELVE UN ARRAY DEL OBJETO Y .some() ITERA EL ARRAY, SI ALGUN ELEMENTO CONTIENE UNA CADENA VACIO, RETORNA "true". LO UTILIZO PARA PODER VALIDAR QUE SE HAYAN INGRESADO DATOS EN EL FORMULARIO.
-            if (id && items.length > 0 && !Object.values(buyer).some((x) => x === '')) {
-                for (const item of items) {
-                    const productoRef = doc(db, 'items', item.id);
+                if (id && items.length > 0) {
+                    for (const item of items) {
+                        const productoRef = doc(db, 'items', item.id);
 
-                    await updateDoc(productoRef, {
-                        stock: increment(-item.quantity),
-                    });
-}
-                mostrarAlerta();
+                        await updateDoc(productoRef, {
+                            stock: increment(-item.quantity),
+                        });
+                    }               
+                }
+                mostrarAlerta(id);
                 clear()
                 setTimeout(() => {
                     redirigirPagina();
                 }, 3000);
-            } else {
-                mostrarAlerta2();
-            }
 
+            });
             
+        
+        }
+        else {
+            mostrarAlerta3()
+        }
 
-            
-        });
+        
+        
     };
 
     return (
@@ -155,9 +145,11 @@ export const Cart = () => {
                     onChange={handleChange}
                 />
                 <div className="d-grid gap-2 col-6 mx-auto divbtn">
-                    <button type="button" className="botonn bot btn btn-success" onClick={handleOrder}>
+                    
+                    <button type="button" className="botonn bot btn btn-success" onClick={handleOrder} >
                         Comprar ahora
                     </button>
+                    
                 </div>
             </form>
         </div>
