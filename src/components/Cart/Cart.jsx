@@ -1,10 +1,11 @@
 import Table from 'react-bootstrap/Table';
 import 'react-bootstrap/Container';
 import '../Cart/Cart.css';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import { getFirestore, addDoc, collection, doc, updateDoc, increment } from 'firebase/firestore';
-import { mostrarAlerta, mostrarAlerta2, mostrarAlerta3 , redirigirPagina } from '../../utils/alerts';
+import { mostrarAlerta, mostrarAlerta2, mostrarAlerta3 } from '../../utils/alerts';
 
 
 
@@ -19,7 +20,13 @@ export const Cart = () => {
     const [buyer, setBuyer] = useState(valoresIniciales);
     const { items, clear, removeItem } = useContext(CartContext);
 
-    
+    const navigate = useNavigate();
+
+
+    const handleClearCart = () =>{
+        clear()
+        navigate("/")
+    }
 
     const handleChange = (evento) => {
         const { name, value } = evento.target;
@@ -33,8 +40,6 @@ export const Cart = () => {
     };
 
     const total = items.reduce((acu, act) => acu + act.price * act.quantity, 0);
-
-    
     
     const handleOrder = () => {
         const order = {
@@ -61,7 +66,7 @@ export const Cart = () => {
                 mostrarAlerta(id);
                 clear()
                 setTimeout(() => {
-                    redirigirPagina();
+                    navigate("/")
                 }, 3000);
 
             });
@@ -73,8 +78,12 @@ export const Cart = () => {
         }
 
         
-        
     };
+    useEffect(() => {
+        if (items.length === 0) {
+            navigate('/');
+        }
+    }, [items, navigate]);
 
     return (
         <div className="cart-body mt-4">
@@ -108,7 +117,7 @@ export const Cart = () => {
             </Table>
             <p className="total">TOTAL = $ {total}</p>
             <div className="d-grid gap-2 col-6 mx-auto divbtn">
-                <button type="button" className="botonn bot btn btn-success" onClick={clear}>
+                <button type="button" className="botonn bot btn btn-success" onClick={handleClearCart}>
                     Vaciar Carrito
                 </button>
             </div>

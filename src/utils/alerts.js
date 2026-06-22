@@ -1,7 +1,5 @@
 import Swal from 'sweetalert2';
 
-
-
 export const mostrarAlerta = (id) => {
                 Swal.fire({
                     title: 'FELICITACIONES!',
@@ -31,8 +29,4 @@ export const mostrarAlerta3 = () => {
                     confirmButtonColor: '#3085d6',
                     title: '¡ERROR!',
                 });
-    };
-
-    export const redirigirPagina = () => {
-        location.href = '/';
     };
