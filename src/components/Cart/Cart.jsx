@@ -4,7 +4,7 @@ import '../Cart/Cart.css';
 import { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
-import { getFirestore, addDoc, collection, doc, updateDoc, increment } from 'firebase/firestore';
+import { getFirestore, addDoc, collection, doc, updateDoc, increment, serverTimestamp } from 'firebase/firestore';
 import { mostrarAlerta, mostrarAlerta2, mostrarAlerta3 } from '../../utils/alerts';
 
 
@@ -13,8 +13,8 @@ const valoresIniciales = {
     name: '',
     phone: '',
     email: '',
+    createdAt: serverTimestamp(),
 };
-
 
 export const Cart = () => {
     const [buyer, setBuyer] = useState(valoresIniciales);

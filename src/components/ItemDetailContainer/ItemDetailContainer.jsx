@@ -6,13 +6,6 @@ import { getFirestore, getDoc, doc, onSnapshot } from 'firebase/firestore';
 export const ItemDetailContainer = () => {
     const [items, setItems] = useState(null);
     const { id } = useParams();
-    // useEffect(() => {
-    //     const db = getFirestore();
-    //     const refDoc = doc(db, 'items', id);
-    //     getDoc(refDoc).then((results) => {
-    //         setItems({ id: results.id, ...results.data() });
-    //     });
-    // }, [id]);
     useEffect(() => {
     const db = getFirestore();
     const refDoc = doc(db, 'items', id);
